@@ -1,0 +1,28 @@
+/* 1. 全局背景颜色强制修改 */
+:root {
+    --theme: #f3f6f9 !important; /* 修改 PaperMod 的核心变量 */
+}
+
+body {
+    background-color: #f3f6f9 !important; /* 强制底色 */
+}
+
+/* 2. 强制头像框样式 */
+.profile_inner img {
+    background-color: #ffffff !important;
+    padding: 10px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+    border: none !important;
+}
+
+/* 3. 隐藏搜索框（那个生硬的白框） */
+input#search-input, .search-form, .search-box {
+    display: none !important;
+}
+
+/* 4. 调整左下角 "+" 装饰的大小（如果它太突兀的话） */
+/* 假设这个装饰是一个特定的 class，如果不是，我们先通过这个尝试控制 */
+.bg-decoration {
+    opacity: 0.3 !important; /* 调淡一点，更高级 */
+}
