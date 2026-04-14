@@ -1,7 +1,6 @@
 baseURL: "/"
 languageCode: "en-us"
 title: "MRHE"
-theme: ""
 
 # Multilingual configuration
 defaultContentLanguage: "en"
