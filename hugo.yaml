@@ -12,7 +12,7 @@ params:
   favicon: "/fav.png"
   useBootstrapCDN: true
   animate: true
-  customCSS: ["css/custom.css"]
+  customCSS: "css/custom.css"
 
   # 导航栏设置
   navbar:
