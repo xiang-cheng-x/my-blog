@@ -2,23 +2,18 @@ baseURL: "https://my-blog-alpha-beige.vercel.app/"
 languageCode: "zh-cn"
 title: "MRHE | 荷尔蒙君"
 
-# 核心设置：锁死中文
+# 核心设置
 defaultContentLanguage: "zh"
 defaultContentLanguageInSubdir: false
 
-# 移除所有多语言分层，直接进入参数设置
 params:
   title: "MRHE"
   description: "愉悦主义潮玩与感官科学"
   favicon: "/fav.png"
-  
-  # 开启 CDN，确保样式能正常加载
   useBootstrapCDN: true
-  
-  # 动画效果
   animate: true
 
-  # 导航栏
+  # 导航栏设置
   navbar:
     align: ms-auto
     brandName: "MRHE"
@@ -31,8 +26,8 @@ params:
       disableProjects: false
       disableContact: false
 
-  # 首页英雄区（改为你的中文信息）
-hero:
+  # 首页英雄区 (已修复 bool 类型报错)
+  hero:
     enable: true
     intro: "你好，我是"
     title: "荷尔蒙君。"
@@ -41,29 +36,19 @@ hero:
     image: /images/hero.svg
     button:
       enable: true
-      name: "了解更多"
-      url: "#about"
+      name: "联系我"
+      url: "#contact"
+      download: false
+      newPage: true
 
   # 关于我
   about:
     enable: true
     title: "关于我"
     content: |-
-      我是荷尔蒙君，一名深耕情趣用品行业的品牌操盘手。
-      
-      目前担任“小怪兽”及“怪兽派对”营销负责人。提倡以“第一性原理”思考产品与增长，致力于将成人用品从传统观念带向“愉悦主义潮玩”的新赛道。
+      我是荷尔蒙君，一名深耕情趣用品行业的品牌操盘手。致力于将成人用品带向“愉悦主义潮玩”的新赛道。
 
-  # 技能标签
-  skills:
-    enable: true
-    title: "擅长领域"
-    items:
-      - "品牌营销策略"
-      - "AIGC 视频营销"
-      - "电商社区运营"
-      - "私域高净值用户转化"
-
-# 导航菜单
+# 导航菜单 (确保 Menus 开头没有多余空格)
 Menus:
   main:
     - identifier: blog
