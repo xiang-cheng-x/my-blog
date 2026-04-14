@@ -32,17 +32,17 @@ params:
       disableContact: false
 
   # 首页英雄区（改为你的中文信息）
-  hero:
+hero:
     enable: true
     intro: "你好，我是"
     title: "荷尔蒙君。"
     subtitle: "专注愉悦主义潮玩与感官科学"
-    content: "小怪兽（Monster Pub）品牌主理人。在这里分享关于品牌策略、AIGC 应用以及现代营销的思考。"
+    content: "小怪兽（Monster Pub）品牌主理人。"
     image: /images/hero.svg
     button:
       enable: true
-      name: "联系我"
-      url: "#contact"
+      name: "了解更多"
+      url: "#about"
 
   # 关于我
   about:
