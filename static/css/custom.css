@@ -1,0 +1,24 @@
+/* 修改全身背景颜色为高级灰 */
+body {
+    background-color: #f3f6f9 !important;
+}
+
+/* 针对你现在的 Hero 区（首页）背景修改 */
+#home, .hero-area, section:first-of-type {
+    background-color: #f3f6f9 !important;
+}
+
+/* 强制头像图片样式：加白边和高级阴影 */
+/* 你的主题头像通常在 hero 区域内 */
+.hero-area img, .profile-img, img[src*="hero.svg"] {
+    background: #ffffff !important;
+    padding: 12px !important;
+    border-radius: 15px !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+    border: none !important;
+}
+
+/* 修改文字颜色，增加高级感 */
+h1, .title {
+    color: #2c3e50 !important;
+}
