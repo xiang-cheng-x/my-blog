@@ -2,7 +2,7 @@ baseURL: "https://my-blog-alpha-beige.vercel.app/"
 languageCode: "zh-cn"
 title: "MRHE | 荷尔蒙君"
 
-# 核心设置：锁死中文环境
+# 核心设置
 defaultContentLanguage: "zh"
 defaultContentLanguageInSubdir: false
 
@@ -12,10 +12,13 @@ params:
   favicon: "/fav.png"
   useBootstrapCDN: true
   animate: true
-  # 开启暗黑模式以符合感官风背景
-  theme: "dark" 
 
-  # 导航栏：对应图中顶部的“首页、教程、关于”等链接
+  # 【修复关键点】：主题配置改为对象格式
+  theme:
+    default: "dark"
+    disableThemeToggle: false
+
+  # 导航栏设置
   navbar:
     align: ms-auto
     brandName: "PROCE" 
@@ -23,31 +26,22 @@ params:
       enable: true
     menus:
       disableAbout: false
-      disableExperience: true # 极简布局，建议关闭
-      disableEducation: true
-      disableProjects: true
       disableContact: false
 
-  # 首页英雄区：全屏背景大图模式
+  # 首页英雄区
   hero:
     enable: true
-    intro: "" # 留空以突出大标题
+    intro: "" 
     title: "PROCE.me" 
     subtitle: "通过 [认知神经学 × 前卫艺术 × 暗网级数据] 熔炼的超限亲密重构指南"
-    content: "这里没有教育，只有始终在进化迭代的肉身宣言。致厌倦通俗调情浅肤方案的你和我。"
-    
-    # 【核心修改】：指向你的背景大图，避开默认人像冲突
+    content: "这里没有教育，只有始终在进化迭代的肉身宣言。"
     image: "/images/site-bg.jpg" 
-    
-    # 按钮设置
     button:
       enable: true
       name: "开始探索"
       url: "#about"
       download: false
       newPage: false
-
-    # 社交媒体图标阵列（对应图中圆圈图标）
     social:
       enable: true
       items:
@@ -55,22 +49,13 @@ params:
           url: "#"
         - icon: "fab fa-instagram"
           url: "#"
-        - icon: "fab fa-github"
-          url: "#"
-        - icon: "fab fa-youtube"
-          url: "#"
 
-  # 关于区域：对应图中下方的黑底白字区块
+  # 关于区域
   about:
     enable: true
     title: "你好啊，旁友～！"
     content: |-
       性，是人体最后的野生边疆。而我，是你们的拓荒者与制图师。
-      
-      在这里——
-      性福是早已被我破解的算法
-      冷淡是亟待校准的感官坐标
-      羞耻是过期的系统补丁
 
 # 底部菜单链接
 Menus:
