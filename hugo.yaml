@@ -13,8 +13,12 @@ params:
   useBootstrapCDN: true
   animate: true
   
+  # 这一行紧跟在上面，不要再次写 params:
   custom_css: ["css/custom.css"]
-  
+
+  # ... 其他配置（如 theme, hero, about）全部写在下面 ...
+
+  # 修正后的主题对象配置
   theme:
     default: "dark"
     disableThemeToggle: false
@@ -29,21 +33,14 @@ params:
       disableAbout: false
       disableContact: false
 
+  # 首页英雄区 - 彻底修复 bool 类型报错
   hero:
     enable: true
     title: "PROCE.me" 
     subtitle: "通过 [认知神经学 × 前卫艺术 × 暗网级数据] 熔炼的超限亲密重构指南"
     content: "这里没有教育，只有始终在进化迭代的肉身宣言。"
-    
-    # 【必须留空！】不要删掉这行，但要让它变为空字符串
-    image: "" 
-    
-    button:
-      enable: true
-      name: "开始探索"
-      url: "#about"
-      download: false
-      newPage: false
+    # 确保图片路径与你 GitHub 上传的一致
+    image: "images/site-bg.jpg" 
     
     # 必须完整包含以下布尔值字段
     button:
