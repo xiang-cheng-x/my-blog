@@ -1,40 +1,50 @@
-/* 1. 强行把所有容器的宽度限制拆掉 */
-.container, .container-fluid, .main, #hero {
-    max-width: 100% !important;
-    width: 100% !important;
+/* 1. 拆掉白色背景和容器边距 */
+body, .main, #hero, .bg-light {
+    background-color: #000 !important;
     margin: 0 !important;
     padding: 0 !important;
 }
 
-/* 2. 给 Hero 注入全屏背景图 */
+/* 2. 强行把原本左右分栏的容器撑开到 100% */
+.container, .container-fluid {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+/* 3. 注入全屏背景大图 */
 #hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+    position: relative;
+    height: 100vh !important; /* 强制占据整个浏览器高度 */
+    width: 100vw !important;
+    /* 注意路径：/images/... 开头的斜杠代表根目录 */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
                 url("/images/site-bg.jpg") no-repeat center center !important;
     background-size: cover !important;
-    height: 100vh !important; /* 强制占满屏幕高度 */
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
 }
 
-/* 3. 彻底抹杀那个带白框的图片容器 */
-.hero-image-container, .hero-image, img[alt="MRHE profile image"] {
+/* 4. 彻底删除那个显示“图裂”的小方块 */
+.hero-image-container, .hero-image, img[alt*="profile"] {
     display: none !important;
 }
 
-/* 4. 让文字在大图中心浮现 */
+/* 5. 让文字浮在正中央 */
 .hero-content {
     text-align: center !important;
-    z-index: 100;
+    z-index: 10;
+    max-width: 800px;
 }
 
 .hero-content h1, .hero-content p {
     color: #fff !important;
-    text-shadow: 0 5px 15px rgba(0,0,0,0.8);
+    text-shadow: 0 4px 10px rgba(0,0,0,0.8);
 }
 
-/* 5. 隐藏多余的装饰元素 */
+/* 6. 隐藏那些烦人的 +++++ 装饰 */
 .plus-matrix, .dots {
     display: none !important;
 }
