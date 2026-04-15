@@ -29,13 +29,13 @@ params:
       disableAbout: false
       disableContact: false
 
-  # 首页英雄区 - 极简模式
   hero:
     enable: true
     title: "PROCE.me" 
     subtitle: "通过 [认知神经学 × 前卫艺术 × 暗网级数据] 熔炼的超限亲密重构指南"
     content: "这里没有教育，只有始终在进化迭代的肉身宣言。"
-    # 【关键】：这里留空！不要写任何图片路径，防止模板生成那个“右侧方块”
+    
+    # 【必须留空！】不要删掉这行，但要让它变为空字符串
     image: "" 
     
     button:
