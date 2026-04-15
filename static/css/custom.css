@@ -1,58 +1,40 @@
-/* 1. 强行拆除模板的白色背景容器约束 */
-body, .main, main, .bg-light, .section {
-    background-color: #000 !important; /* 全局黑底 */
+/* 1. 强行把所有容器的宽度限制拆掉 */
+.container, .container-fluid, .main, #hero {
+    max-width: 100% !important;
+    width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
-    max-width: 100% !important;
 }
 
-/* 2. 强行将 Hero 区域横向撑满屏幕 */
-.container, .container-fluid {
-    max-width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-/* 3. 重新构建 Hero 区域：全屏背景大图 */
+/* 2. 给 Hero 注入全屏背景图 */
 #hero {
-    position: relative;
-    min-height: 100vh !important; /* 强制占据全屏高度 */
-    width: 100vw !important;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
                 url("/images/site-bg.jpg") no-repeat center center !important;
     background-size: cover !important;
-    background-attachment: fixed !important; /* 增加高级感滚动效果 */
+    height: 100vh !important; /* 强制占满屏幕高度 */
     display: flex !important;
-    flex-direction: column;
+    flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
 }
 
-/* 4. 彻底删除右侧那个缩在方块里的图片容器 */
+/* 3. 彻底抹杀那个带白框的图片容器 */
 .hero-image-container, .hero-image, img[alt="MRHE profile image"] {
     display: none !important;
 }
 
-/* 5. 让文字浮在大图中央 */
+/* 4. 让文字在大图中心浮现 */
 .hero-content {
-    z-index: 100;
     text-align: center !important;
-    padding: 20px;
-    background: transparent !important;
+    z-index: 100;
 }
 
-.hero-content h1, .hero-content h2, .hero-content p, .hero-content span {
-    color: #ffffff !important;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.9) !important; /* 增强文字在复杂背景上的可读性 */
-}
-
-/* 6. 隐藏导航栏的白色背景，使其悬浮 */
-.navbar {
-    background: rgba(0,0,0,0.5) !important;
-    backdrop-filter: blur(10px); /* 磨砂玻璃效果 */
-    border-bottom: none !important;
-}
-
-.navbar a {
+.hero-content h1, .hero-content p {
     color: #fff !important;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.8);
+}
+
+/* 5. 隐藏多余的装饰元素 */
+.plus-matrix, .dots {
+    display: none !important;
 }
