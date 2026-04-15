@@ -12,7 +12,12 @@ params:
   favicon: "/fav.png"
   useBootstrapCDN: true
   animate: true
-  customCSS: "css/custom.css"
+  color:
+    backgroundColor: "#f3f6f9"        # 首页背景色（高级灰）
+    primaryColor: "#007bff"           # 主色调
+    textColor: "#2c3e50"              # 主文字颜色
+    darkmode:
+      backgroundColor: "#18191a"
 
   # 导航栏设置
   navbar:
