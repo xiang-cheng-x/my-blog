@@ -2,7 +2,7 @@ baseURL: "https://my-blog-alpha-beige.vercel.app/"
 languageCode: "zh-cn"
 title: "MRHE | 荷尔蒙君"
 
-# 强制使用中文目录
+# 基础设置
 defaultContentLanguage: "zh"
 defaultContentLanguageInSubdir: false
 
@@ -10,12 +10,10 @@ params:
   title: "MRHE"
   description: "愉悦主义潮玩与感官科学"
   favicon: "fav.png"
-  
-  # 必须开启，否则样式会乱
   useBootstrapCDN: true
   animate: true
 
-  # 主题模式修正
+  # 修正后的主题对象配置
   theme:
     default: "dark"
     disableThemeToggle: false
@@ -30,26 +28,30 @@ params:
       disableAbout: false
       disableContact: false
 
-  # 首页英雄区
+  # 首页英雄区 - 彻底修复 bool 类型报错
   hero:
     enable: true
     title: "PROCE.me" 
     subtitle: "通过 [认知神经学 × 前卫艺术 × 暗网级数据] 熔炼的超限亲密重构指南"
     content: "这里没有教育，只有始终在进化迭代的肉身宣言。"
-    
-    # 【修复重点】：尝试改用相对路径，并确保图片在 static/images/site-bg.jpg
+    # 确保图片路径与你 GitHub 上传的一致
     image: "images/site-bg.jpg" 
     
+    # 必须完整包含以下布尔值字段
     button:
       enable: true
       name: "开始探索"
       url: "#about"
+      download: false  # 必须写 false，不能留空
+      newPage: false   # 必须写 false，不能留空
     
-    # 社交图标（如果主题支持）
+    # 社交图标
     social:
       enable: true
       items:
         - icon: "fab fa-weibo"
+          url: "#"
+        - icon: "fab fa-instagram"
           url: "#"
 
   # 关于区域
@@ -59,7 +61,7 @@ params:
     content: |-
       性，是人体最后的野生边疆。而我，是你们的拓荒者与制图师。
 
-# 菜单导航
+# 导航菜单
 Menus:
   main:
     - identifier: power
