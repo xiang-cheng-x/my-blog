@@ -2,23 +2,25 @@ baseURL: "https://my-blog-alpha-beige.vercel.app/"
 languageCode: "zh-cn"
 title: "MRHE | 荷尔蒙君"
 
-# 核心设置
+# 强制使用中文目录
 defaultContentLanguage: "zh"
 defaultContentLanguageInSubdir: false
 
 params:
   title: "MRHE"
   description: "愉悦主义潮玩与感官科学"
-  favicon: "/fav.png"
+  favicon: "fav.png"
+  
+  # 必须开启，否则样式会乱
   useBootstrapCDN: true
   animate: true
 
-  # 【修复关键点】：主题配置改为对象格式
+  # 主题模式修正
   theme:
     default: "dark"
     disableThemeToggle: false
 
-  # 导航栏设置
+  # 导航栏
   navbar:
     align: ms-auto
     brandName: "PROCE" 
@@ -31,23 +33,23 @@ params:
   # 首页英雄区
   hero:
     enable: true
-    intro: "" 
     title: "PROCE.me" 
     subtitle: "通过 [认知神经学 × 前卫艺术 × 暗网级数据] 熔炼的超限亲密重构指南"
     content: "这里没有教育，只有始终在进化迭代的肉身宣言。"
-    image: "/images/site-bg.jpg" 
+    
+    # 【修复重点】：尝试改用相对路径，并确保图片在 static/images/site-bg.jpg
+    image: "images/site-bg.jpg" 
+    
     button:
       enable: true
       name: "开始探索"
       url: "#about"
-      download: false
-      newPage: false
+    
+    # 社交图标（如果主题支持）
     social:
       enable: true
       items:
         - icon: "fab fa-weibo"
-          url: "#"
-        - icon: "fab fa-instagram"
           url: "#"
 
   # 关于区域
@@ -57,14 +59,10 @@ params:
     content: |-
       性，是人体最后的野生边疆。而我，是你们的拓荒者与制图师。
 
-# 底部菜单链接
+# 菜单导航
 Menus:
   main:
     - identifier: power
       name: POWer 教程
       url: /power
       weight: 1
-    - identifier: tools
-      name: 工具/专题
-      url: /tools
-      weight: 2
