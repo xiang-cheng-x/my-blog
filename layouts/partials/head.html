@@ -107,3 +107,33 @@
 </style>
 
 {{ partial "head/extensions.html" . }}
+<style>
+    /* 1. 强行锁定背景色（高级灰） */
+    :root {
+        --background-color: #f3f6f9 !important;
+    }
+    
+    html, body, #home, .hero-area, section {
+        background-color: #f3f6f9 !important;
+    }
+
+    /* 2. 强行美化头像（白色边框+高级阴影） */
+    /* 这里的选择器覆盖了你目前页面上所有可能的头像位置 */
+    .hero-area img, .profile-img, img[src*="hero.svg"], .profile_inner img {
+        background-color: #ffffff !important;
+        padding: 10px !important;
+        border-radius: 12px !important;
+        box-shadow: 0 20px 45px rgba(0,0,0,0.12) !important;
+        border: 1px solid rgba(255,255,255,0.5) !important;
+        transition: transform 0.3s ease;
+    }
+    
+    .hero-area img:hover {
+        transform: translateY(-5px); /* 悬停时往上漂浮一点，更有质感 */
+    }
+
+    /* 3. 强行抹掉顶部那个生硬的白色搜索框 */
+    .search-form, #search-input, input.form-control, .ms-3.shadow-sm {
+        display: none !important;
+    }
+</style>
