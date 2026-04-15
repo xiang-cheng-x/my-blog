@@ -38,7 +38,7 @@ params:
     intro: "你好，我是"
     title: "荷尔蒙君。"
     subtitle: "专注愉悦主义潮玩与感官科学"
-    content: "小怪兽（Monster Pub）品牌主理人。"
+    content: "荷尔蒙君主理人。"
     image: /images/hero.svg
     button:
       enable: true
