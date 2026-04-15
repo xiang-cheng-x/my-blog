@@ -1,45 +1,43 @@
-/* 1. 彻底抹平默认布局的背景和间距 */
-body, .main, #hero {
-    background-color: #000 !important; /* 强制黑底 */
+/* 1. 强行把原本的左右布局打散，让 Hero 区域变成全屏 */
+.hero-image-container, .hero-image, img[alt="MRHE profile image"] {
+    display: none !important; /* 彻底删掉右边那个电视机小图 */
+}
+
+/* 2. 强行把背景图注入到 Hero 容器 */
+#hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+                      url("/images/site-bg.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    min-height: 100vh !important; /* 强制占满全屏高度 */
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     margin: 0 !important;
     padding: 0 !important;
 }
 
-/* 2. 将图片变为全屏背景 */
-#hero {
-    position: relative;
-    height: 100vh; /* 占据整个屏幕高度 */
-    width: 100vw;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                url("/images/site-bg.jpg") no-repeat center center !important;
-    background-size: cover !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-/* 3. 彻底干掉右边那个小方块图片 */
-.hero-image, .hero-image-container, img[alt="MRHE profile image"] {
-    display: none !important;
-    visibility: hidden !important;
-}
-
-/* 4. 让文字居中并浮动在大图正上方 */
+/* 3. 让文字变白、居中、浮在正中间 */
 .hero-content {
-    z-index: 10;
-    text-align: center;
-    color: #fff !important;
-    max-width: 90%;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;
+    z-index: 999 !important;
 }
 
-.hero-content h1, .hero-content h2, .hero-content p {
-    color: #fff !important;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.8); /* 增加文字阴影确保在大图上清晰 */
+.hero-content h1, .hero-content h2, .hero-content p, .hero-content span {
+    color: #ffffff !important;
 }
 
-/* 5. 隐藏那些烦人的加号（++++）装饰 */
-.hero-content .plus-matrix, .dots {
+/* 4. 干掉那些碍眼的 ++++++ 符号 */
+.plus-matrix, .dots {
     display: none !important;
+}
+
+/* 5. 修正白色背景底色 */
+main, .main, .bg-light {
+    background-color: #000 !important;
 }
