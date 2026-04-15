@@ -13,8 +13,9 @@ params:
   useBootstrapCDN: true
   animate: true
   
-  # 这一行紧跟在上面，不要再次写 params:
-  custom_css: ["css/custom.css"]
+  # 确保这里只写这一行，且路径指向 static 下的文件夹
+  custom_css: 
+    - "css/custom.css"
 
   # ... 其他配置（如 theme, hero, about）全部写在下面 ...
 
