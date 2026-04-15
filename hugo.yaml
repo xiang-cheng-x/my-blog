@@ -2,7 +2,7 @@ baseURL: "https://my-blog-alpha-beige.vercel.app/"
 languageCode: "zh-cn"
 title: "MRHE | 荷尔蒙君"
 
-# 核心设置
+# 核心设置：锁死中文环境
 defaultContentLanguage: "zh"
 defaultContentLanguageInSubdir: false
 
@@ -12,56 +12,74 @@ params:
   favicon: "/fav.png"
   useBootstrapCDN: true
   animate: true
-  color:
-    backgroundColor: "#f3f6f9"        # 首页背景色（高级灰）
-    primaryColor: "#007bff"           # 主色调
-    textColor: "#2c3e50"              # 主文字颜色
-    darkmode:
-      backgroundColor: "#18191a"
+  # 开启暗黑模式以符合感官风背景
+  theme: "dark" 
 
-  # 导航栏设置
+  # 导航栏：对应图中顶部的“首页、教程、关于”等链接
   navbar:
     align: ms-auto
-    brandName: "MRHE"
+    brandName: "PROCE" 
     stickyNavBar:
       enable: true
     menus:
       disableAbout: false
-      disableExperience: false
-      disableEducation: false
-      disableProjects: false
+      disableExperience: true # 极简布局，建议关闭
+      disableEducation: true
+      disableProjects: true
       disableContact: false
 
-  # 首页英雄区 (已修复 bool 类型报错)
+  # 首页英雄区：全屏背景大图模式
   hero:
     enable: true
-    intro: "你好，我是"
-    title: "荷尔蒙君。"
-    subtitle: "专注愉悦主义潮玩与感官科学"
-    content: "荷尔蒙君主理人。"
-    image: /images/hero.svg
+    intro: "" # 留空以突出大标题
+    title: "PROCE.me" 
+    subtitle: "通过 [认知神经学 × 前卫艺术 × 暗网级数据] 熔炼的超限亲密重构指南"
+    content: "这里没有教育，只有始终在进化迭代的肉身宣言。致厌倦通俗调情浅肤方案的你和我。"
+    
+    # 【核心修改】：指向你的背景大图，避开默认人像冲突
+    image: "/images/site-bg.jpg" 
+    
+    # 按钮设置
     button:
       enable: true
-      name: "联系我"
-      url: "#contact"
+      name: "开始探索"
+      url: "#about"
       download: false
-      newPage: true
+      newPage: false
 
-  # 关于我
+    # 社交媒体图标阵列（对应图中圆圈图标）
+    social:
+      enable: true
+      items:
+        - icon: "fab fa-weibo"
+          url: "#"
+        - icon: "fab fa-instagram"
+          url: "#"
+        - icon: "fab fa-github"
+          url: "#"
+        - icon: "fab fa-youtube"
+          url: "#"
+
+  # 关于区域：对应图中下方的黑底白字区块
   about:
     enable: true
-    title: "关于我"
+    title: "你好啊，旁友～！"
     content: |-
-      我是荷尔蒙君，一名深耕情趣用品行业的品牌操盘手。致力于将成人用品带向“愉悦主义潮玩”的新赛道。
+      性，是人体最后的野生边疆。而我，是你们的拓荒者与制图师。
+      
+      在这里——
+      性福是早已被我破解的算法
+      冷淡是亟待校准的感官坐标
+      羞耻是过期的系统补丁
 
-# 导航菜单 (确保 Menus 开头没有多余空格)
+# 底部菜单链接
 Menus:
   main:
-    - identifier: blog
-      name: 博客
-      url: /blog
+    - identifier: power
+      name: POWer 教程
+      url: /power
       weight: 1
-    - identifier: gallery
-      name: 画廊
-      url: /gallery
+    - identifier: tools
+      name: 工具/专题
+      url: /tools
       weight: 2
